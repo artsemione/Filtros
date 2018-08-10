@@ -1,0 +1,20 @@
+double 				Kalmans(void){
+	
+	// Valor Medido
+	MEA = ReadCount();
+	
+	// Kalmans Filter Gain
+	KG = ERROR_E0/(ERROR_E0 + ERROR_MEA);
+		
+	// Updating Estimative
+	E_E1 = E_E0;
+	E_E0 = E_E1 + KG*(MEA - E_E1);
+	
+	// Updating Error	
+	ERROR_E1 = ERROR_E0;	
+	ERROR_E0 = (1-KG)*ERROR_E1;
+	
+	return E_E0;
+	
+	
+}
