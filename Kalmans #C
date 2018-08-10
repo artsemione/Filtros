@@ -1,4 +1,16 @@
-double 				Kalmans(void){
+float KG  = 0;
+float MEA = 0;
+
+float ERROR_E0 = 30;
+float ERROR_E1 = 0;
+
+int		ERROR_MEA = 2;
+
+double E_E0 = 0;					//Estimativa Futura - Primeira previsao = Tara
+double E_E1 = 0;					//Estimativa Passada
+
+
+double	Kalmans(void){
 	
 	// Valor Medido
 	MEA = ReadCount();
