@@ -1,0 +1,30 @@
+void					FIR_vector(int M, double vector[],double vector_F[],int N){
+	
+	double	ss[100] = {0};
+	unsigned long sum = 0;
+	int						count =0;
+	int						it    =0;
+
+	for(i=0;i<N;i++){										
+		
+		ss[i] = vector[i];
+		
+	}
+	
+	for(it=0;it<N;it++){
+		
+			sum = 0;
+			
+			for(i=0;i<M;i++){
+				
+				sum = sum + ss[i]*FIR_C[i];	  // 16 valores 
+			}
+			
+			vector_F[count] = sum;
+			count++;
+			
+			for(i=0;i<(N-1);i++){										
+				ss[i] = ss[i+1];         
+			}	
+	}
+}
